@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Blockremental</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="style/style.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/break_infinity.js@2"></script>
+    <script src="script/game.js"></script>
+</head>
+
+<body>
+    <div class="w3-bar w3-black w3-border-bottom w3-border-dark-gray">
+        <a class="w3-bar-item w3-mobile w3-black"><b><i>Blockremental </i></b> by m4gnusrx</a>        
+        <button class="w3-bar-item w3-mobile w3-button w3-cyan" onclick="openTab('generators')">Generators</button>
+        <button class="w3-bar-item w3-mobile w3-button w3-green" onclick="openTab('upgrades')">Upgrades</button>
+        <button class="w3-bar-item w3-mobile w3-button w3-dark-gray" onclick="openTab('options')">Options</button>
+    </div>
+
+    <div id="content" class="w3-container">
+        <div id="generators">
+            <p class="w3-center">
+                You have <b class="blockCount w3-xlarge"></b> &#9723;
+                (+<span class="blockRate"></span> &#9723;/s)
+            </p>
+            <div class="w3-center" style="max-width: 1200px; margin: auto;">
+                <div id="gen1" class="w3-row">
+                    <div class="w3-show-inline-block w3-left">
+                        Primary Generator: <span id="gen1Count"></span> &times; <span id="gen1Mult"></span>
+                        = <b><span id="gen1Power"></span> &#9724;<sup>1</sup></b>
+                    </div>
+                    <button id="gen1Buy" class="genBuy w3-button w3-border w3-right" onclick="genBuy(1)"></button>
+                </div>
+
+                <hr class="genHr">
+
+                <div id="gen2" class="w3-row">
+                    <div class="w3-show-inline-block w3-left">
+                        Secondary Generator: <span id="gen2Count"></span> &times; <span id="gen2Mult"></span>
+                        = <b><span id="gen2Power"></span> &#9724;<sup>2</sup></b>
+                    </div>
+                    <button id="gen2Buy" class="genBuy w3-button w3-border w3-right" onclick="genBuy(2)"></button>
+                </div>
+
+                <hr class="genHr">
+
+                <div id="gen3" class="w3-row">
+                    <div class="w3-show-inline-block w3-left">
+                        Tertiary Generator: <span id="gen3Count"></span> &times; <span id="gen3Mult"></span>
+                        = <b><span id="gen3Power"></span> &#9724;<sup>3</sup></b>
+                    </div>
+                    <button id="gen3Buy" class="genBuy w3-button w3-border w3-right" onclick="genBuy(3)"></button>
+                </div>
+                
+                <hr class="genHr">
+
+                <div id="gen4" class="w3-row">
+                    <div class="w3-show-inline-block w3-left">
+                        Quarternary Generator: <span id="gen4Count"></span> &times; <span id="gen4Mult"></span>
+                        = <b><span id="gen4Power"></span> &#9724;<sup>4</sup></b>
+                    </div>
+                    <button id="gen4Buy" class="genBuy w3-button w3-border w3-right" onclick="genBuy(4)"></button>
+                </div>
+
+                <hr class="genHr">
+
+                <div id="gen5" class="w3-row">
+                    <div class="w3-show-inline-block w3-left">
+                        Quinary Generator: <span id="gen5Count"></span> &times; <span id="gen5Mult"></span>
+                        = <b><span id="gen5Power"></span> &#9724;<sup>5</sup></b>
+                    </div>
+                    <button id="gen5Buy" class="genBuy w3-button w3-border w3-right" onclick="genBuy(5)"></button>
+                </div>
+
+                <hr class="genHr">
+                
+                <div id="gen6" class="w3-row">
+                    <div class="w3-show-inline-block w3-left">
+                        Senary Generator: <span id="gen6Count"></span> &times; <span id="gen6Mult"></span>
+                        = <b><span id="gen6Power"></span> &#9724;<sup>6</sup></b>
+                    </div>
+                    <button id="gen6Buy" class="genBuy w3-button w3-border w3-right" onclick="genBuy(6)"></button>
+                </div>
+
+                <hr class="genHr">
+                
+                <div id="gen7" class="w3-row">
+                    <div class="w3-show-inline-block w3-left">
+                        Septenary Generator: <span id="gen7Count"></span> &times; <span id="gen7Mult"></span>
+                        = <b><span id="gen7Power"></span> &#9724;<sup>7</sup></b>
+                    </div>
+                    <button id="gen7Buy" class="genBuy w3-button w3-border w3-right" onclick="genBuy(7)"></button>
+                </div>
+
+                <hr class="genHr">
+                
+                <div id="gen8" class="w3-row">
+                    <div class="w3-show-inline-block w3-left">
+                        Octonary Generator: <span id="gen8Count"></span> &times; <span id="gen8Mult"></span>
+                        = <b><span id="gen8Power"></span> &#9724;<sup>8</sup></b>
+                    </div>
+                    <button id="gen8Buy" class="genBuy w3-button w3-border w3-right" onclick="genBuy(8)"></button>
+                </div>
+
+                <hr class="genHr">
+                
+                <div id="gen9" class="w3-row">
+                    <div class="w3-show-inline-block w3-left">
+                        Nonary Generator: <span id="gen9Count"></span> &times; <span id="gen9Mult"></span>
+                        = <b><span id="gen9Power"></span> &#9724;<sup>9</sup></b>
+                    </div>
+                    <button id="gen9Buy" class="genBuy w3-button w3-border w3-right" onclick="genBuy(9)"></button>
+                </div>
+
+                <hr class="genHr">
+                
+                <div id="gen10" class="w3-row">
+                    <div class="w3-show-inline-block w3-left">
+                        Denary Generator: <span id="gen10Count"></span> &times; <span id="gen10Mult"></span>
+                        = <b><span id="gen10Power"></span> &#9724;<sup>10</sup></b>
+                    </div>
+                    <button id="gen10Buy" class="genBuy w3-button w3-border w3-right" onclick="genBuy(10)"></button>
+                </div>
+            </div>
+        </div>
+        <div id="upgrades" style="display: none;">
+            <p class="w3-center">
+                You have <b class="blockCount w3-xlarge"></b> &#9723;
+                (+<span class="blockRate"></span> &#9723;/s)
+            </p>
+            <div id="upg1" class="w3-padding-24">
+                <div>
+                    <b><i>Upgrade 1 - Generator Reboot [<span id="upg1Count"></span> (+<span id="upg1Power"></span>&times;)]</i></b> <br>
+                    Reset your blocks and generators and increase generator multiplier per power-up by 0.50&times;
+                </div>
+                <button id="upg1Buy" class="upgBuy w3-button w3-border" onclick="upgBuy(1)">
+                    
+                </button>
+            </div>
+        </div>
+        <div id="options" style="display: none;">
+            <button class="w3-button w3-border"
+                onclick="toggleDark()">
+                Toggle Dark/Light
+            </button>
+            <a href="ideas.html" class="w3-button w3-border">
+                Idea Page
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
