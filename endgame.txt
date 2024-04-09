@@ -1,0 +1,4 @@
+<div class="w3-center">
+    <h1>Congratulations!</h1>
+    <p>You have reached <b>1.00e3000</b> &#9723;. This is the end of the test.</p>
+</div>

@@ -42,7 +42,7 @@ $(document).keypress(function (event) {
     }
 })
 
-var openTab = function(x) {
+var tab = function(x) {
     $("#content").children().hide();
     $("#" + x).show();
 }
@@ -62,7 +62,6 @@ var toggleDark = function() {
 
     isDark = !isDark;
 }
-
 var blocks = { count: 1, rate: 0 };
 var genArray = [
     { count: 0, purchased: 0, mult: 1, power: 0, basePrice: "1" },
@@ -183,6 +182,12 @@ var generate = function(x) {
     }
 }
 
+var endgame = function() {
+    $(".tab").hide();
+    $("#content").children().hide();
+    $("#content").load("./endgame.txt")
+}
+
 var update = function() {
     for (let i = 10; i > 0; i--) {
         generate(i - 1);
@@ -204,6 +209,11 @@ var update = function() {
         $("#upg" + i + "Power").html(twoDP(upgArray[i - 1].power));
         $("#upg" + i + "Buy").html(`Upgrade for ${twoDP(upgCost(i))} &#9723;`);
         checkCost(i, "upg");
+    }
+
+    if (Decimal.cmp(blocks.count, "1e3000") != -1) {
+        clearInterval(gameLoop);
+        endgame();
     }
 }
 
