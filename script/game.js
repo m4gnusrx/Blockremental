@@ -1,8 +1,7 @@
 var audio = new Audio("https://dl.vgmdownloads.com/soundtracks/homebrew-browser-background-music-wii-homebrew/ixmkbgpnxa/Homebrew%20Browser.mp3");
-audio.volume = 0.2;
+audio.volume = 0.5;
 audio.loop = true;
-
-//audio.play();
+audio.autoplay = true;
 
 $(document).keypress(function (event) {
     switch (event.key) {
