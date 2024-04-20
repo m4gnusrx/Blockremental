@@ -1,8 +1,3 @@
-var audio = new Audio("https://dl.vgmdownloads.com/soundtracks/homebrew-browser-background-music-wii-homebrew/ixmkbgpnxa/Homebrew%20Browser.mp3");
-audio.volume = 0.5;
-audio.loop = true;
-audio.autoplay = true;
-
 $(document).keypress(function (event) {
     switch (event.key) {
         case "1":
@@ -42,26 +37,6 @@ $(document).keypress(function (event) {
     }
 })
 
-var tab = function(x) {
-    $("#content").children().hide();
-    $("#" + x).show();
-}
-
-var isDark = false;
-var toggleDark = function() {
-    if (isDark) {
-        $("body").css("background-color", "white");
-        $(".genHr").css("border-color", "black");
-        $("body, button, h1, h2, h3, h4, h5, h6").css("color", "black");
-    }
-    else {
-        $("body").css("background-color", "black");
-        $(".genHr").css("border-color", "white");
-        $("body, button, h1, h2, h3, h4, h5, h6").css("color", "white");
-    }
-
-    isDark = !isDark;
-}
 var blocks = { count: 1, rate: 0 };
 var genArray = [
     { count: 0, purchased: 0, mult: 1, power: 0, basePrice: "1" },

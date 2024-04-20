@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="style/style.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/break_infinity.js@2"></script>
+    <script src="script/interface.js"></script>
     <script src="script/game.js"></script>
 </head>
 
 <body>
     <div class="w3-bar w3-black w3-border-bottom w3-border-dark-gray">
-        <a class="w3-bar-item w3-mobile w3-black"><b><i>Blockremental </i></b> by m4gnusrx</a>        
+        <a class="w3-bar-item w3-mobile w3-black"><b><i>Blockremental [Era<sub>0</sub>]</i></b> by m4gnusrx</a>        
         <button class="tab w3-bar-item w3-mobile w3-button w3-cyan" onclick="tab('generators')">Generators</button>
         <button class="tab w3-bar-item w3-mobile w3-button w3-green" onclick="tab('upgrades')">Upgrades</button>
         <button class="tab w3-bar-item w3-mobile w3-button w3-dark-gray" onclick="tab('options')">Options</button>
@@ -142,12 +143,12 @@
             </div>
         </div>
         <div id="options" style="display: none;">
-            <button class="w3-button w3-border" onclick="toggleDark()">
+            <button class="w3-button w3-small w3-border" onclick="toggleDark()">
                 Toggle Dark/Light
-            </button> <br>
-            <a href="https://www.youtube.com/watch?v=eh9vmTh0QkU" class="w3-button w3-border">
-                Song: Addiction by Noiseless
-            </a>
+            </button>
+            <button class="w3-button w3-small w3-border" onclick="toggleGlow()">
+                Toggle Glow
+            </button>
         </div>
     </div>
 </body>
